@@ -1,0 +1,36 @@
+<div class="container">
+<form (submit)="onPress()">
+  <label for="userName">USERNAME</label>
+  <input type="text" id="userName" class="form-control" name="userName"
+  required
+  minlength="4"
+  maxlength="24"
+  [(ngModel)]="user.userName"
+  #userName="ngModel"
+  />
+
+  <div *ngIf="userName.errors && (userName.dirty || userName.touched)"
+     class="alert alert-danger">
+    <div [hidden]="!userName.errors.required">
+      A username is required
+    </div>
+    <div [hidden]="!userName.errors.minlength">
+      Your name must be at least 4 characters long.
+    </div>
+    <div [hidden]="!userName.errors.maxlength">
+      Your name cannot be more than 24 characters long (for this demo's purposes).
+    </div>
+  </div>
+
+  <label for="password">PASSWORD</label>
+  <input type="password" id="password" class="form-control" name="password"
+  required
+  minlength="8"
+  maxlength="12"
+  [(ngModel)]="user.password"
+  #password="ngModel"
+  />
+  
+  <a class="waves-effect waves-light btn-large red mobile-v"><input type="submit" name="next" value="NEXT"></a>
+</form>
+</div>

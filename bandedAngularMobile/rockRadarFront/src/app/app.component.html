@@ -1,36 +1,62 @@
 <div class="container">
-<form (submit)="onPress()">
-  <label for="userName">USERNAME</label>
-  <input type="text" id="userName" class="form-control" name="userName"
-  required
-  minlength="4"
-  maxlength="24"
-  [(ngModel)]="user.userName"
-  #userName="ngModel"
-  />
+<form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
+  <div class="form-group">
+    <label for="userName">USERNAME</label>
+    <input type="text" id="userName" class="form-control" name="userName"
+    required
+    minlength="4"
+    maxlength="24"
+    [(ngModel)]="user.userName"
+    #userName="ngModel"
+    />
 
-  <div *ngIf="userName.errors && (userName.dirty || userName.touched)"
-     class="alert alert-danger">
-    <div [hidden]="!userName.errors.required">
-      A username is required
-    </div>
-    <div [hidden]="!userName.errors.minlength">
-      Your name must be at least 4 characters long.
-    </div>
-    <div [hidden]="!userName.errors.maxlength">
-      Your name cannot be more than 24 characters long (for this demo's purposes).
-    </div>
+    <small [hidden]="userName.valid || (userName.pristine && !f.submitted)" class="text-danger">
+      Username is required (minimum 5 characters).
+    </small>
+    
   </div>
 
-  <label for="password">PASSWORD</label>
-  <input type="password" id="password" class="form-control" name="password"
-  required
-  minlength="8"
-  maxlength="12"
-  [(ngModel)]="user.password"
-  #password="ngModel"
-  />
-  
+  <div class="form-group">
+    <label for="motto">MOTTO</label>
+    <input type="text" id="motto" class="form-control" name="motto"
+    [(ngModel)]="user.motto"
+    #motto="ngModel"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="password">PASSWORD</label>
+    <input type="password" id="password" class="form-control" name="password"
+    required validateEqual="confirmPassword" reverse="true"
+    minlength="8"
+    maxlength="16"
+    [(ngModel)]="user.password"
+    #password="ngModel"
+    />
+    </div>
+
+  <div class="form-group">
+    <label for="confirmPassword">CONFIRM PASSWORD</label>
+    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+    required validateEqual="password" reverse="false" #confirmPassword="ngModel"
+    [(ngModel)]="user.confirmPassword"
+    #confirmPassword="ngModel"
+    />
+    <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)" class="text-danger">
+      Password mismatch
+    </small>
+  </div>
+
+
+      
+
+
   <a class="waves-effect waves-light btn-large red mobile-v"><input type="submit" name="next" value="NEXT"></a>
 </form>
 </div>
+
+
+required validateEqual="confirmPassword" reverse="true" #password="ngModel">
+      <small [hidden]="password.valid || (password.pristine && !f.submitted)" class="text-danger">
+        Password is required
+      </small>

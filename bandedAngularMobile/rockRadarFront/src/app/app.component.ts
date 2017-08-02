@@ -1,23 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { User } from './user.interface';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  user = {
-    userName: '',
-    password: '',
-
-  }
+export class AppComponent implements OnInit {
+  public user: User;
   
-  onPress() { 
-    console.log("onPress()");
-    console.log(this.user); //declare new instance of a user here? this.user = user.new(userName, password)
+  ngOnInit() {
     this.user = {
-      userName: '',
-      password: '',
+    userName: '',
+    motto: '',
+    password: '',
+    confirmPassword: '',
+    genre: 'null'
     }
+  }
+
+  save(model: User, isValid: boolean) {
+    // call API to save customer
+    console.log(model, isValid);
   }
 }

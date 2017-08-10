@@ -12,4 +12,13 @@ export class AppComponent {
   private hideNavbar() {
     $(".nav-extended").hide();
   }
+
+  optionsSideNave = {
+    edge: "right"
+  }
 }
+
+
+$(document).ready(function() {
+    $('select').material_select();
+  });

@@ -1,6 +1,6 @@
 <h4>UserNewComponent</h4>
 <div class="row">
-  <form class="col s12" (submit)="create()">
+  <form materialize class="col s12" (submit)="create()">
     <div class="row">
       <div class="input-field col s12">
         <input id="username" name="username" type="text" class="validate" [(ngModel)]="newUser.username">
@@ -13,11 +13,12 @@
         <label for="textarea1">YOUR MOTTO. THE REASON YOU ARE HERE?</label>
       </div>
     </div>
+    <div class="row">
     <div class="input-field col s12">
-      <select multiple>
-        <option value="" disabled selected>GENRES THAT YOU FANCY</option>
-        <option value="acoustic">ACOUSTIC</option>
-        <option value="alternative_rock">ALTERNATIVE ROCK</option>
+      <select multiple materialize="material_select" id="genres" name="genres" [(ngModel)]="newUser.genres">
+        <option value="" disabled selected>GENRES FANCIED</option>
+        <option value="ACOUSTIC">ACOUSTIC</option>
+        <option value="ALTERNATIVE ROCK">ALTERNATIVE ROCK</option>
         <option value="blues">BLUES</option>
         <option value="classic_rock">CLASSIC ROCK</option>
         <option value="classical">CLASSICAL</option>
@@ -34,6 +35,7 @@
         <option value="r_and_b">R&B</option>
       </select>
       <label for="genres">GENRE(S)</label>
+    </div>
     </div>
     <div class="row">
         <div class="input-field col s12">

@@ -16,9 +16,9 @@ export class AppComponent {
   optionsSideNave = {
     edge: "right"
   }
+  
 }
 
-
-$(document).ready(function() {
+$(document).ready(function() {  
     $('select').material_select();
   });

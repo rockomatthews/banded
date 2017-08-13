@@ -1,4 +1,7 @@
 <h4>UserListComponent</h4>
 <div *ngFor="let user of users">
-  {{ user.username }} - {{ user.motto }} - {{ user.genres }}
+  {{ user.username }} - {{ user.motto }} - {{ user.genres }} <br>
+  <button (click)="destroy(user)" class="waves-effect waves btn blue col s04">DESTROY</button>
+  <button (click)="user.editable = !user.editable" class="waves-effect waves btn green col s12">EDIT</button>
+  <app-user-edit [user]="user" *ngIf="user.editable"></app-user-edit>
 </div>

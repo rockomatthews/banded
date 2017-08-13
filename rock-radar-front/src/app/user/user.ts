@@ -3,9 +3,10 @@ export class User {
         public _id: number = Math.floor(Math.random()*100),
         public username = "",
         public motto: string = "",
-        public genres:string[] = ['Accoustic', 'Alternative Rock', 'Blues', 'Classic Rock', 'Classical', 'Comedy', 'Country', 'Electronic', 'Experimental', 'Jazz', 'Metal', 'Pop', 'Raggae', 'Rap', 'R&B'],
+        public genres:string[] = [],
         public password: string = "",
-        public confirmPassword: string = ""  
+        public confirmPassword: string = "",
+        public editable: boolean = false, 
     ){}
 }
   

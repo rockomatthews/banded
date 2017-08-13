@@ -1,61 +1,54 @@
-<h3>UserNewComponent</h3>
-<form (submit)="create()">
-  <label>username?</label>
-  <input type="text" name="username" [(ngModel)]="newUser.username">
-  <label>YOUR MOTTO. THE REASON YOU ARE HERE?</label>
-  <input type="text" name="motto" [(ngModel)]="newUser.motto">
-  <label>GENRES FANCIED</label>
-  <div class="input-field col s12">
-    <select multiple>
-      <option value="" disabled selected>SELECT GENRES TO SEARCH THAT YOU FANCY</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-  </div>
-  <input type="password" name="password" [(ngModel)]="newUser.password">
-  <input type="password" name="confirmPassword" [(ngModel)]="newUser.confirmPassword">
-  <input type="submit" class="waves-effect waves btn-large red">
-</form>
-
-  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
+<h4>UserNewComponent</h4>
+<div class="row">
+  <form materialize class="col s12" (submit)="create()">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="username" name="username" type="text" class="validate" [(ngModel)]="newUser.username">
+        <label for="username">USERNAME?</label>
       </div>
-      <div class="row">
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea1" name="motto" class="materialize-textarea" [(ngModel)]="newUser.motto"></textarea>
+        <label for="textarea1">YOUR MOTTO. THE REASON YOU ARE HERE?</label>
+      </div>
+    </div>
+    <div class="row">
+    <div class="input-field col s12">
+      <select multiple materialize="material_select" id="genres" name="genres" [(ngModel)]="newUser.genres">
+        <option value="" disabled selected>GENRES FANCIED</option>
+        <option value="ACOUSTIC">ACOUSTIC</option>
+        <option value="ALTERNATIVE ROCK">ALTERNATIVE ROCK</option>
+        <option value="blues">BLUES</option>
+        <option value="classic_rock">CLASSIC ROCK</option>
+        <option value="classical">CLASSICAL</option>
+        <option value="comedy">COMEDY</option>
+        <option value="country">COUNTRY</option>
+        <option value="electronic">ELECTRONIC</option>
+        <option value="experiemntal">EXPERIMENTAL</option>
+        <option value="jazz">JAZZ</option>
+        <option value="metal">METAL</option>
+        <option value="pop">POP</option>
+        <option value="raggae">RAGGAE</option>
+        <option value="rap">RAP</option>
+        <option value="rock">ROCK</option>
+        <option value="r_and_b">R&B</option>
+      </select>
+      <label for="genres">GENRE(S)</label>
+    </div>
+    </div>
+    <div class="row">
         <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
+          <input id="password" name="password" type="password" class="validate" [(ngModel)]="newUser.password">
+          <label for="password">PASSWORD</label>
         </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="confirmPassword" name="confirmPassword" type="password" class="validate" [(ngModel)]="newUser.confirmPassword">
+        <label for="confirmPassword">CONFIRM THIS</label>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          This is an inline input field:
-          <div class="input-field inline">
-            <input id="email" type="email" class="validate">
-            <label for="email" data-error="wrong" data-success="right">Email</label>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
+    </div>
+    <input type="submit" value="SIGN UP" class="waves-effect waves btn-large red col s12">
+  </form>
+</div>

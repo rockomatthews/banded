@@ -14,28 +14,13 @@
       </div>
     </div>
     <div class="row">
-    <div class="input-field col s12">
-      <select multiple materialize="material_select" id="genres" name="genres" [(ngModel)]="newUser.genres">
-        <option value="" disabled selected>GENRES FANCIED</option>
-        <option value="ACOUSTIC">ACOUSTIC</option>
-        <option value="ALTERNATIVE ROCK">ALTERNATIVE ROCK</option>
-        <option value="blues">BLUES</option>
-        <option value="classic_rock">CLASSIC ROCK</option>
-        <option value="classical">CLASSICAL</option>
-        <option value="comedy">COMEDY</option>
-        <option value="country">COUNTRY</option>
-        <option value="electronic">ELECTRONIC</option>
-        <option value="experiemntal">EXPERIMENTAL</option>
-        <option value="jazz">JAZZ</option>
-        <option value="metal">METAL</option>
-        <option value="pop">POP</option>
-        <option value="raggae">RAGGAE</option>
-        <option value="rap">RAP</option>
-        <option value="rock">ROCK</option>
-        <option value="r_and_b">R&B</option>
-      </select>
-      <label for="genres">GENRE(S)</label>
-    </div>
+      <div class="input-field col s12">
+        <select name="genre" multiple materialize="material_select" [materializeSelectOptions]="selectOptions" [(ngModel)]="newUser.genres">
+          <option value="" disabled selected>Choose your option</option>
+          <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+        </select>
+        <label>Materialize Multiple Select</label>
+      </div>
     </div>
     <div class="row">
         <div class="input-field col s12">
@@ -49,6 +34,6 @@
         <label for="confirmPassword">CONFIRM THIS</label>
       </div>
     </div>
-    <input type="submit" value="SIGN UP" class="waves-effect waves btn-large red col s12">
+    <input type="submit" value="SIGN UP" class="waves-effect waves btn-large red darken-3 col s12">
   </form>
 </div>

@@ -13,12 +13,13 @@ export class AppComponent {
     $(".nav-extended").hide();
   }
 
-  optionsSideNave = {
+  optionsSideNav = {
     edge: "right"
   }
   
 }
 
-$(document).ready(function() {  
-    $('select').material_select();
-  });
+$(document).ready(function(e) {
+  $('ul.tabs').tabs({'swipeable': true});
+  $("select").material_select({"stopPropagation":true});
+});

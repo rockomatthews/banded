@@ -20,6 +20,8 @@ export class AppComponent {
 }
 
 $(document).ready(function(e) {
+  
   $('ul.tabs').tabs({'swipeable': true});
   $("select").material_select({"stopPropagation":true});
 });
+

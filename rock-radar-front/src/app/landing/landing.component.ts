@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+declare var $:any;
+declare var jQuery:any;
 
 @Component({
   selector: 'app-landing',
@@ -13,3 +15,7 @@ export class LandingComponent implements OnInit {
   }
 
 }
+
+$(document).ready(function(){
+  $('.slider').slider();
+});

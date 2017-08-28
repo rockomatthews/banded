@@ -22,3 +22,4 @@ export class AppComponent {
 $(document).ready(function() {  
     $('select').material_select();
   });
+

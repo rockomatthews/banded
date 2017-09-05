@@ -14,6 +14,8 @@ import { UserNewComponent } from './user/user-new/user-new.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { LandingComponent } from './landing/landing.component';
 import { UserOldComponent } from './user/user-old/user-old.component';
+import { SwipeComponent } from './swipe/swipe.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { UserOldComponent } from './user/user-old/user-old.component';
     UserEditComponent,
     LandingComponent,
     UserOldComponent,
+    SwipeComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,

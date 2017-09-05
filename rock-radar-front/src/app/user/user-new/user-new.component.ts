@@ -1,6 +1,7 @@
 import { User } from "./../user";
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-declare var $:any;
+import { Routes, Router } from '@angular/router';
+declare var $: any;
 declare var jQuery:any;
 @Component({
   selector: 'app-user-new',
@@ -19,7 +20,7 @@ export class UserNewComponent implements OnInit {
   @Output() createNewUserEvent = new EventEmitter();
      
   
-  constructor() { }
+  constructor(private router:Router)       { }
 
   public ngOnInit() {
     window.setTimeout(()=>{
@@ -43,11 +44,28 @@ export class UserNewComponent implements OnInit {
     },100);
   }
  
-  create(){
+  create(e){
     // call server to save
+    
+    
+    e.preventDefault();
+    console.log(e);
+    var email = this.newUser.email;
+    var username = this.newUser.username;
+    var motto = this.newUser.motto;
+    var genres = this.newUser.genres;
+    var password = this.newUser.password;
+    var confirmPassword = this.newUser.confirmPassword;
+    console.log(email, username, motto, genres, password, confirmPassword);
+    // console.log(email);
     this.createNewUserEvent.emit(this.newUser);
     this.newUser = new User();
+  
+      if (email == "admin" && password == "admin"){
+        this.router.navigate(['app-swipe'])
+      }
+
+
   }
   
 }
-

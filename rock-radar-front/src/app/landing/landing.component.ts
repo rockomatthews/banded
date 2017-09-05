@@ -17,5 +17,5 @@ export class LandingComponent implements OnInit {
 }
 
 $(document).ready(function(){
-  $('.slider').slider();
+  $('.carousel.carousel-slider').carousel({fullWidth: true}); 
 });

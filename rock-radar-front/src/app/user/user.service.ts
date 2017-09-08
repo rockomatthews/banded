@@ -7,11 +7,25 @@ import "rxjs";
 @Injectable()
 export class UserService {
 
-  constructor(private _http: Http) { }
+  private isUserLoggedIn;
+  private username;
+
+
+  constructor(private _http: Http) { 
+    this.isUserLoggedIn = false;
+  }
 
   create(user: User){
     return this._http.post("/users", user)
     .map(data => data.json()).toPromise()
+  }
+
+  setUserLoggedIn() {
+    this.isUserLoggedIn = true;
+  }
+
+  getUserLoggedIn() {
+    return this.isUserLoggedIn;
   }
 
   destroy(user: User){

@@ -1,6 +1,7 @@
 import { User } from "./../user";
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Routes, Router } from '@angular/router';
+import { UserService } from "../user.service";
 declare var $: any;
 declare var jQuery:any;
 @Component({
@@ -20,7 +21,7 @@ export class UserNewComponent implements OnInit {
   @Output() createNewUserEvent = new EventEmitter();
      
   
-  constructor(private router:Router)       { }
+  constructor(private router:Router, private user: UserService)       { }
 
   public ngOnInit() {
     window.setTimeout(()=>{
@@ -45,9 +46,6 @@ export class UserNewComponent implements OnInit {
   }
  
   create(e){
-    // call server to save
-    
-    
     e.preventDefault();
     console.log(e);
     var email = this.newUser.email;
@@ -62,6 +60,7 @@ export class UserNewComponent implements OnInit {
     this.newUser = new User();
   
       if (email == "admin" && password == "admin"){
+        this.user.setUserLoggedIn();
         this.router.navigate(['app-swipe'])
       }
 

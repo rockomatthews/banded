@@ -5,6 +5,8 @@ import { UserEditComponent } from "./user/user-edit/user-edit.component";
 import { SwipeComponent } from "./swipe/swipe.component";
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UserService } from "./user/user.service";
+import { AuthGuardGuard } from "./auth-guard.guard";
 
 const routes: Routes = [
     {
@@ -34,6 +36,7 @@ const routes: Routes = [
     {
         path: 'app-swipe',
         pathMatch: 'full',
+        canActivate: [AuthGuardGuard],
         component: SwipeComponent,
         children: []
     }
@@ -42,6 +45,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [UserService],
 })
 export class AppRoutingModule { }

@@ -9,6 +9,8 @@ export class UserService {
 
   private isUserLoggedIn;
   private username;
+  public email;
+  public password;
 
 
   constructor(private _http: Http) { 

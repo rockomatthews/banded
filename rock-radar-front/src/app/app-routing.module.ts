@@ -22,13 +22,13 @@ const routes: Routes = [
         children: []
     },
     {
-        path: 'user-old',
+        path: 'app-user-old',
         pathMatch: 'full',
         component: UserOldComponent,
         children: []
     },
     {
-        path: 'user-edit',
+        path: 'app-user-edit',
         pathMatch: 'full',
         component: UserEditComponent,
         children: []

@@ -3,5 +3,5 @@
   {{ user.username }} - {{ user.motto }} - {{ user.genres }} <br>
   <button (click)="destroy(user)" class="waves-effect waves btn blue col s04">DESTROY</button>
   <button (click)="user.editable = !user.editable" class="waves-effect waves btn green col s12">EDIT</button>
-  <app-user-edit [user]="user" *ngIf="user.editable"></app-user-edit>
+  <app-user-edit [user]="user" (updateUserEvent)="update($event)" *ngIf="user.editable"></app-user-edit>
 </div>

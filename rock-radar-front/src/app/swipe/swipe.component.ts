@@ -1,5 +1,5 @@
 import { User } from "../user/user";
-import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input } from '@angular/core';
 import {MaterializeAction} from 'angular2-materialize';
 
 import { Routes, Router } from '@angular/router';
@@ -14,23 +14,13 @@ declare var jQuery:any;
 })
 export class SwipeComponent implements OnInit {
   @Input() users;
-  @Output() updateUserEvent = new EventEmitter();
-  userCurrent = this.user;
-  
-  
-  constructor(private router:Router, private user:UserService) { }
-  
-  ngOnInit() {
-    console.log(this.userCurrent)
-  }
 
-  update(users) {
-    this.updateUserEvent.emit(users)
+  constructor(private router:Router, private user:UserService) { }
+
+  ngOnInit() {
   }
 
 }
-
-
 
 
 

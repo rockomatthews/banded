@@ -1,14 +1,14 @@
 <div class="row">
-  <form materialize class="col s12" (submit)="userLoggedIn($event)">
+  <form materialize class="col s12" (submit)="create($event)">
     <div class="row">
       <div class="input-field col s12">
-        <input id="email" name="email" type="text" class="validate" [(ngModel)]="currentUser.email">
+        <input id="email" name="email" type="text" class="validate" [(ngModel)]="oldUser.email">
         <label for="email">EMAIL</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="password" name="password" type="password" class="validate" [(ngModel)]="currentUser.password">
+        <input id="password" name="password" type="password" class="validate" [(ngModel)]="oldUser.password">
         <label for="password">YOUR PASS</label>
       </div>
     </div>

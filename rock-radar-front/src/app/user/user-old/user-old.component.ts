@@ -11,8 +11,9 @@ declare var jQuery:any;
   styleUrls: ['./user-old.component.css']
 })
 export class UserOldComponent implements OnInit {
+  newUser = new User();
+  oldUser = this.user;
   @Input() users;
-  currentUser = this.user;
   @Output() createUserEvent = new EventEmitter();
 
   constructor(private router:Router, private user: UserService) { }
@@ -20,16 +21,17 @@ export class UserOldComponent implements OnInit {
     
   }
 
-  userLoggedIn(e) {
-    e.preventDefault();
-    console.log(e);
-    var email = this.currentUser.email;
-    var password = this.currentUser.password;
+  loginOld(e) {
+    var email = this.user.email;
+    var password = this.user.password
+    this.createUserEvent.emit(this.newUser);
+    this.newUser = new User();
+      
+      if (email == "admin" && password == "admin"){
+        this.user.setUserLoggedIn();
+        this.router.navigate(['app-swipe'])
+      }
 
-    if(email == "admin" && password == "admin") {
-      this.user.setUserLoggedIn();
-      this.router.navigate(["app-swipe"]);
-    }
 
   }
 

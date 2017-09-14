@@ -13,10 +13,6 @@ export class UserComponent implements OnInit {
     new User(2, "whatever@gmail.com", "whatever", "I hate justice", ["Metal"], "closetLoser!", "closetLoser!"),
     new User(3, "trixter@phoney.com", "trixter", "I love waking up but am hated by all", ["Pop", "R&B"], "Wuswuswus44!", "Wuswuswus44!")
   ];
-  
-  
-
-
    
   constructor(private _userService: UserService) { }
   
@@ -40,9 +36,8 @@ export class UserComponent implements OnInit {
   }
   
   getUsers(){
-    // this._userService.getUsers().then(users => this.users = users)
+    // this._userService.getUsers()
+    // .then(users => this.users = users)
   }
-
-
-
+  
 }

@@ -7,17 +7,21 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
-  @Input() users;
-
+  @Input() user: User;
   @Output() showUserEvent = new EventEmitter();
-
+  userShow: User = this.user;
   constructor() { }
-  
+
   
 
   ngOnInit() {
   
   }
 
+  show() {
+    this.userShow
+    this.user
+    this.showUserEvent.emit({original: this.user});
+  }
 
 }

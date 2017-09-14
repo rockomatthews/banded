@@ -13,15 +13,10 @@ export class UserNewComponent implements OnInit {
   newUser = new User();
   multiSelectedOptions = "";
   private selectOptions = [];
-    
-  
- 
-  
-
   @Output() createNewUserEvent = new EventEmitter();
      
   
-  constructor(private router:Router, private user: UserService)       { }
+  constructor(private router:Router, private user: UserService) { }
 
   public ngOnInit() {
     window.setTimeout(()=>{

@@ -36,8 +36,7 @@ export class UserComponent implements OnInit {
   }
   
   getUsers(){
-    // this._userService.getUsers()
-    // .then(users => this.users = users)
+    // this._userService.getUsers().then(users => this.users = users)
   }
   
 }

@@ -4,7 +4,6 @@ import { UserService } from "./user/user.service";
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -16,7 +15,6 @@ import { LandingComponent } from './landing/landing.component';
 import { UserOldComponent } from './user/user-old/user-old.component';
 import { SwipeComponent } from './swipe/swipe.component';
 import { MessageComponent } from './message/message.component';
-import { AuthGuardGuard } from "./auth-guard.guard";
 
 @NgModule({
   declarations: [
@@ -33,12 +31,11 @@ import { AuthGuardGuard } from "./auth-guard.guard";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     MaterializeModule,
     FormsModule,
     HttpModule,
   ],
-  providers: [UserService, AuthGuardGuard],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

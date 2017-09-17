@@ -13,13 +13,16 @@ declare var jQuery:any;
   styleUrls: ['./swipe.component.css']
 })
 export class SwipeComponent implements OnInit {
+  currentUser: User;
   @Input() users;
+
   @Output() updateUserEvent = new EventEmitter();
-  userCurrent = this.user;
-  constructor(private router:Router, private user:UserService) { }
+  
+  constructor(private user:UserService) { }
 
   ngOnInit() {
-    console.log(this.userCurrent)
+    console.log(this.currentUser)
+    console.log(this.currentUser)
   }
 
   update(users) {

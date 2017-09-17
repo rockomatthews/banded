@@ -9,20 +9,14 @@ import { UserService } from "../user.service";
   styleUrls: ['./user-edit.component.css'],
 })
 export class UserEditComponent implements OnInit {
-  @Input() user: User;
-  @Output() updateUserEvent = new EventEmitter();
-  userEdit: User = new User();
+  
+  
 
-  constructor(private router:Router) { }
+  constructor() { }
 
   ngOnInit() {
-    Object.assign(this.userEdit, this.user);
-    console.log(this.userEdit);
+
   }
 
-  update() {
-    this.userEdit.editable = false;
-    this.updateUserEvent.emit({original: this.user, edited:this.userEdit});
-  }
 
 }

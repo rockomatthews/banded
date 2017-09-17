@@ -1,32 +1,16 @@
 <div class="row">
-  <form materialize class="col s12" (submit)="update($event)">
+  <form materialize class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="username" name="username" class="materialize-textarea" [(ngModel)]="userEdit.username"></textarea>
+        <label for="username" class="active" >CHANGE USERNAME?</label>
+      </div>
+    </div>
     <div class="row">
       <div class="input-field col s12">
         <textarea id="textarea1" name="motto" class="materialize-textarea" [(ngModel)]="userEdit.motto"></textarea>
         <label for="textarea1" class="active" >CHANGE MOTTO MAYBE?</label>
       </div>
-    </div>
-    <div class="input-field col s12">
-      <select multiple>
-        <option value="" disabled selected>GENRES THAT YOU FANCY</option>
-        <option value="acoustic">ACOUSTIC</option>
-        <option value="alternative_rock">ALTERNATIVE ROCK</option>
-        <option value="blues">BLUES</option>
-        <option value="classic_rock">CLASSIC ROCK</option>
-        <option value="classical">CLASSICAL</option>
-        <option value="comedy">COMEDY</option>
-        <option value="country">COUNTRY</option>
-        <option value="electronic">ELECTRONIC</option>
-        <option value="experiemntal">EXPERIMENTAL</option>
-        <option value="jazz">JAZZ</option>
-        <option value="metal">METAL</option>
-        <option value="pop">POP</option>
-        <option value="raggae">RAGGAE</option>
-        <option value="rap">RAP</option>
-        <option value="rock">ROCK</option>
-        <option value="r_and_b">R&B</option>
-      </select>
-      <label for="genres" class="active">GENRE(S)</label>
     </div>
     <div class="row">
         <div class="input-field col s12">

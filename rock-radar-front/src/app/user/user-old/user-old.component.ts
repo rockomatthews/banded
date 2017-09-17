@@ -12,26 +12,9 @@ declare var jQuery:any;
 })
 export class UserOldComponent implements OnInit {
 
-  @Input() users;
-  currentUser = this.user;
-  @Output() createUserEvent = new EventEmitter();
-
-  constructor(private router:Router, private user: UserService) { }
+  constructor(private user: UserService) { }
   public ngOnInit() {
     
-  }
-
-  userLoggedIn(e) {
-    e.preventDefault();
-    console.log(e);
-    var email = this.currentUser.email;
-    var password = this.currentUser.password;
-
-    if(email == "admin" && password == "admin") {
-      this.user.setUserLoggedIn();
-      this.router.navigate(["app-swipe"]);
-    }
-
   }
 
 }

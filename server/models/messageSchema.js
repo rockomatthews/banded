@@ -1,18 +1,12 @@
 var mongoose = require("mongoose");
-var User = mongoose.model("User");
+var User = require('userSchema');
 
 var messageSchema = mongoose.Schema({
-    sender:{
-        ref: 'User',
-        require: true       
-    },
-    reciever:{
-        ref: 'User',
-        require: true
-    },
+    sender:[User],
+    reciever:[User],
     message:{
         type:string,
-    }
+    },
 });
 
 mongoose.model('Message', messageSchema);

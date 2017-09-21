@@ -10,3 +10,4 @@ mongoose.connect("mongodb://localhost/banded", function (err) {
     }
 });
 require("../models/userSchema");
+require("../models/messageSchema");

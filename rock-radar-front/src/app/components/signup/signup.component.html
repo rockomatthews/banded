@@ -2,8 +2,9 @@
         <form materialize class="col s12">
           <div class="row">
             <div class="input-field col s12">
-              <input id="username" name="username" type="text" class="validate" [(ngModel)]="newUser.username">
-              <label for="username">USER NAME?</label>
+              <input id="username" name="username" type="email" class="validate" required="" aria-required="true" 
+              [(ngModel)]="newUser.username">
+              <label for="username">EMAIL</label>
             </div>
           </div>
           <div class="row">
@@ -13,6 +14,11 @@
             </div>
           </div>
           <!-- <div class="row">
+            <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+            <label for="filled-in-box">Alternative Rock</label>
+            <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+          </div> -->
+          <div class="row">
             <div class="input-field col s12">
               <select name="genre" multiple materialize="material_select" [materializeSelectOptions]="selectOptions" [(ngModel)]="newUser.genres">
                 <option value="" disabled selected>Choose your option</option>
@@ -20,7 +26,7 @@
               </select>
               <label>Materialize Multiple Select</label>
             </div>
-          </div>  !-->
+          </div>
           <div class="row">
               <div class="input-field col s12">
                 <input id="password" name="password" type="password" class="validate" [(ngModel)]="newUser.password">
@@ -40,4 +46,4 @@
       <div>
           Already have an account? <a href="/signin"> Signin</a>
       </div>
-      
+   

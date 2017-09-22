@@ -1,2 +1,8 @@
-
+<h2>Hello {{currentUser.username}}</h2>
+<hr>
 <button (click)="logout()" class="waves-effect waves-light btn">Logout</button>
+<hr>
+
+<ul *ngFor="let user of allUsers">
+    <li>User Name: {{user.username}}</li>
+</ul>

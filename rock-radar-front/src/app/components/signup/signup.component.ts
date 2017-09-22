@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { User } from '../../user/user';
 
 @Component({
   selector: 'signup',
@@ -8,13 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  constructor(private authService: AuthService, private router: Router) {}
-
-  newUser = {
-    email: '',
-    password: '',
-    confirmPassword: ''
-  };
+  newUser = new User();
+  constructor(private userService: UserService, private authService: AuthService, private router: Router) {}
 
   signup() {
     this.authService.signup(this.newUser).subscribe(
@@ -26,4 +23,5 @@ export class SignupComponent {
       }
     );
   }
+
 }

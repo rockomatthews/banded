@@ -13,6 +13,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
+import { UserService } from './services/user.service';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { AuthGuard } from './services/auth-guard.service';
     AppRoutingModule
   ],
   providers: [
+    UserService,
     {provide: AuthService, useClass: AuthService},
     {provide: AuthGuard, useClass: AuthGuard},
   ],

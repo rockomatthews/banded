@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class SigninComponent {
    constructor(private authService: AuthService, private router: Router) {}
    public currentUser = {
-     email: '',
+     username: '',
      password: ''
    };
 
